@@ -1,28 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr.c                                     :+:      :+:    :+:   */
+/*   ft_pointer.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mcantell <mcantell@student.42.fr>          +#+  +:+       +#+        */
+/*   By: mcantell <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/24 10:29:28 by mcantell          #+#    #+#             */
-/*   Updated: 2024/01/25 15:19:22 by mcantell         ###   ########.fr       */
+/*   Created: 2024/01/29 12:43:04 by mcantell          #+#    #+#             */
+/*   Updated: 2024/01/29 13:28:06 by mcantell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int	ft_putstr(char *s)
+int	ft_pointer(size_t p)
 {
-	int	i;
+	int	len;
 
-	i = 0;
-	if (!s)
-		return (0);
-	while (*s)
+	len = 0;
+	if (p == 0)
 	{
-		i += ft_putchar(*s);
-		s++;
+		len += ft_putstr("0x0");
+		return (len);
 	}
-	return (i);
+	len += ft_putstr("0x");
+	len += ft_putnub(p);
+	ft_putnubhex(p, 'x');
+	return (len);
 }

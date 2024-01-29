@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mcantell <mcantell@student.42.fr>          +#+  +:+       +#+        */
+/*   By: mcantell <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/25 17:12:38 by mcantell          #+#    #+#             */
-/*   Updated: 2024/01/25 19:28:31 by mcantell         ###   ########.fr       */
+/*   Updated: 2024/01/29 13:51:09 by mcantell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,10 @@ int	ft_proto(va_list args, const char frmt)
 		l += ft_printnub(va_arg(args, long int));
 	if (frmt == 'u')
 		l += ft_printunsnub(va_arg(args, unsigned int));
+	if (frmt == 'x' || frmt == 'X')
+		l += ft_putnubhex(va_arg(args, unsigned int), frmt);
+	if (frmt == 'p')
+		l += ft_pointer(va_arg(args, size_t));
 	return (l);
 }
 
@@ -52,14 +56,4 @@ int	ft_printf(const char *str, ...)
 	}
 	va_end(args);
 	return (len);
-}
-int main()
-{
-	int s;
-
-	s = ft_printf("");
-	printf("%c", '\n');
-	printf("%d", s); //mi printa il return 
-	printf("%c", '\n');
-	printf("%s", "");
 }
