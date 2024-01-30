@@ -1,6 +1,11 @@
 NAME = libftprintf.a
 
-SRC = 
+SRC = 	ft_exadecimal.c \
+		ft_pointer.c \
+		ft_printf.c \
+		ft_putchar.c \
+		ft_putnub.c \
+		ft_putstr.c \
 
 
 CC = gcc

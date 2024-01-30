@@ -3,19 +3,19 @@
 /*                                                        :::      ::::::::   */
 /*   ft_putnub.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mcantell <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: mcantell <mcantell@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/25 18:59:52 by mcantell          #+#    #+#             */
-/*   Updated: 2024/01/29 11:01:55 by mcantell         ###   ########.fr       */
+/*   Updated: 2024/01/30 10:08:41 by mcantell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int	ft_putnu(long int i)
+int	ft_putnu(long long int i)
 {
-	long int	n;
-	int			l;
+	long long int	n;
+	int				l;
 
 	n = i;
 	l = 0;
@@ -27,13 +27,13 @@ int	ft_putnu(long int i)
 	}
 	if (n >= 10)
 		l += ft_putnu(n / 10);
-	l += ft_putchar((n % 10)) + '0';
+	l += ft_putchar((n % 10) + '0');
 	return (l);
 }
 
-int	ft_printnub(int i)
+int	ft_printnub(long long int i)
 {
-	int	n;
+	long long int	n;
 
 	n = 0;
 	if (i == 0)

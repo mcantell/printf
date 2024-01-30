@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_exadecimal.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mcantell <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: mcantell <mcantell@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/25 19:29:52 by mcantell          #+#    #+#             */
-/*   Updated: 2024/01/29 12:08:52 by mcantell         ###   ########.fr       */
+/*   Updated: 2024/01/29 15:35:11 by mcantell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,8 @@ int	ft_putnubhex(unsigned int i, const char s)
 {
 	unsigned int	c;
 
+	if (i == 0)
+		return (write (1, "0", 1));
 	if (i >= 16)
 		ft_putnubhex(i / 16, s);
 	c = i % 16;
