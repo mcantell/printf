@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mcantell <mcantell@student.42.fr>          +#+  +:+       +#+        */
+/*   By: mcantell <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/25 17:12:38 by mcantell          #+#    #+#             */
-/*   Updated: 2024/01/30 10:06:52 by mcantell         ###   ########.fr       */
+/*   Updated: 2024/01/30 11:48:30 by mcantell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ int	ft_proto(va_list args, const char frmt)
 	if (frmt == 's')
 		l += ft_putstr(va_arg(args, char *));
 	if (frmt == 'd' || frmt == 'i')
-		l += ft_printnub(va_arg(args, long long int));
+		l += ft_printnub(va_arg(args, int));
 	if (frmt == 'u')
 		l += ft_printunsnub(va_arg(args, unsigned int));
 	if (frmt == 'x' || frmt == 'X')
